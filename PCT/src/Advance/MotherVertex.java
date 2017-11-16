@@ -113,6 +113,7 @@ public class MotherVertex {
 		g.addEdge(5, 2);
 		g.addEdge(6, 0);
 
+
 		System.out.println("Mother Vertex: " + g.findMother());
 
 		

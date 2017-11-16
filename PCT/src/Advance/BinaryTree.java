@@ -212,7 +212,7 @@ public class BinaryTree {
 		System.out.println("LCA(4, 5) = " + tree.findLCA(4, 5).data);
 		System.out.println("LCA(5, 4) = " + tree.findLCA(5, 4).data);
 
-		System.out.println("LCA(4, 6) = " + tree.findLCA(4, 6).data);
+		System.out.println("LCA(2, 6) = " + tree.findLCA(2, 6).data);
 
 		System.out.println("LCA Left(4, 2) = " + tree.findLeft(4, 1).data);
 

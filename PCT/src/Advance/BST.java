@@ -9,7 +9,7 @@ public class BST {
 	}
 
 	void insert(int key) {
-		 root = insert(root, key);
+		root = insert(root, key);
 	}
 
 	BSTNode insert(BSTNode root, int value) {
@@ -19,25 +19,48 @@ public class BST {
 			return root;
 		}
 
-		
-		 if (value < root.value)
-	            root.left = insert(root.left, value);
-	        else if (value > root.value)
-	            root.right = insert(root.right, value);
-		
+		if (value < root.value)
+			root.left = insert(root.left, value);
+		else if (value > root.value)
+			root.right = insert(root.right, value);
+
 		return root;
 	}
 
-	
-	  void inorder()  {
-	       inorderRec(root);
-	    }
-	  
+	void inorder() {
+		inorderRec(root);
+	}
+
 	void inorderRec(BSTNode root) {
 		if (root != null) {
 			inorderRec(root.left);
 			System.out.println(root.value);
 			inorderRec(root.right);
+		}
+	}
+
+	int height(){
+		return height(root);
+	}
+	
+	int height(BSTNode root) {
+		if (root == null)
+			return 0;
+		else {
+			
+			/* compute height of each subtree */
+			int lheight = height(root.left);
+			int rheight = height(root.right);
+
+			System.out.print(lheight);
+			System.out.print(rheight);
+			System.out.println();
+			
+			/* use the larger one */
+			if (lheight > rheight)
+				return (lheight + 1);
+			else
+				return (rheight + 1);
 		}
 	}
 
@@ -57,6 +80,8 @@ public class BST {
 
 		// print inorder traversal of the BST
 		tree.inorder();
+
+		System.out.println(tree.height());
 	}
 }
 
